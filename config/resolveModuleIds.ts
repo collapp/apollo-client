@@ -20,7 +20,7 @@ eachFile(distDir, (file, relPath) => new Promise((resolve, reject) => {
       tr.absolutePaths.forEach(absPath => {
         const distRelativePath =
           path.relative(distDir, absPath).split(path.sep).join("/");
-        if (distRelativePath === "utilities/globals/index.js") {
+        if (distRelativePath === "utilities/globals/index.js" || distRelativePath ==="utilities/globals/index.mjs") {
           importsUtilitiesGlobals = true;
         }
       });

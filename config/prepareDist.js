@@ -54,6 +54,8 @@ const srcDir = `${__dirname}/..`;
 const destDir = `${srcDir}/dist`;
 fs.copyFileSync(`${srcDir}/README.md`,  `${destDir}/README.md`);
 fs.copyFileSync(`${srcDir}/LICENSE`,  `${destDir}/LICENSE`);
+fs.copyFileSync(`${srcDir}/.npmrc`,  `${destDir}/.npmrc`);
+
 
 // Create individual bundle package.json files, storing them in their
 // associated dist directory. This helps provide a way for the Apollo Client

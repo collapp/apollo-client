@@ -1,5 +1,5 @@
 {
-  "name": "@apollo/client",
+  "name": "@collapp/apollo-client",
   "version": "3.4.11",
   "description": "A fully-featured caching GraphQL client.",
   "private": true,
