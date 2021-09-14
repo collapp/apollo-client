@@ -13,8 +13,8 @@
   ],
   "author": "opensource@apollographql.com",
   "license": "MIT",
-  "main": "./dist/main.cjs.js",
-  "module": "./dist/index.js",
+  "main": "./dist/main.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "react-native": {
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apollographql/apollo-client.git"
+    "url": "git+https://github.com/collapp/apollo-client.git"
   },
   "bugs": {
     "url": "https://github.com/apollographql/apollo-client/issues"
@@ -31,12 +31,13 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "tsc",
-    "postbuild": "npm run update-version && npm run invariants && npm run sourcemaps && npm run rollup && npm run prepdist && npm run resolve && npm run verify-version",
+    "postbuild": "npm run update-version && npm run invariants && npm run sourcemaps && npm run copy-mjs &&  npm run rollup && npm run prepdist && npm run resolve && npm run verify-version",
     "update-version": "node config/version.js update",
     "verify-version": "node config/version.js verify",
     "invariants": "ts-node-script config/processInvariants.ts",
     "sourcemaps": "ts-node-script config/rewriteSourceMaps.ts",
     "rollup": "rollup -c ./config/rollup.config.js",
+    "copy-mjs": "node config/esm.js",
     "prepdist": "node ./config/prepareDist.js",
     "resolve": "ts-node-script config/resolveModuleIds.ts",
     "clean": "rimraf -r dist coverage lib",

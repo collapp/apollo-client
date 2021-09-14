@@ -127,6 +127,10 @@ export default [
     './dist/index.js',
     './dist/apollo-client.cjs.js',
   ),
+  prepareCJS(
+    './dist/core/index.js',
+    './dist/core/apollo-client.cjs.js',
+  ),
   prepareCJSMinified(
     './dist/apollo-client.cjs.js',
   ),
